@@ -3,6 +3,13 @@
 # 联系方式: calidion@gmail.com
 # google Code 地址: https://code.google.com/p/vimide/
 
+# 安装方法: sh install.sh 或 chmod +x install.sh | ./install.sh
+# Install commands: sh install.sh or chmod +x install.sh | ./install.sh
+
+#global variables
+mydir=`pwd`
+tmpdir=/tmp/vimide
+ 
 #vim directory preparation
 dir=~/.vim
 if [ ! -d "$dir" ]; then
@@ -23,10 +30,39 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 set nu!
+set mouse=a
+set nobackup
+set noswapfile
+set nowb
+set backspace=start,indent,eol
+set noerrorbells
+set novisualbell
+set helplang=cn
 map <C-t> :NERDTree<cr>
 map <C-s> :w<cr>
 vmap <C-c> \"+y
 " >> $vimrc
+if [ ! -d "$tmpdir" ]; then
+  mkdir $tmpdir
+fi
+cd $tmpdir
+
+#install vim help doc for chinese
+vimcdoc=vimcdoc-1.5.0.tar.gz
+vimcdocdir=vimcdoc-1.5.0
+if [ -d "$vimcdocdir" ]; then
+  rm -rf $vimcdocdir
+fi
+if [ ! -f "$vimcdoc" ]; then
+  wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/$vimcdoc
+fi
+tar -xvf $vimcdoc
+cd $vimcdocdir
+sh vimcdoc.sh -i
+cd ..
+rm -rf $vimcdocdir
+
+#function definitions
 
 getScript () {
   if [ ! -f "$1" ]; then
@@ -45,6 +81,16 @@ getScriptFile () {
   cp -rf $1 $dir/plugin
   echo "$1 install finished."
 }
+
+getFile () {
+  if [ ! -f "$1" ]; then
+    echo "Start downloading $1, please wait..."
+    wget http://www.vim.org/scripts/download_script.php?src_id=$2 -O $1
+  fi
+  cp -rf $1 $dir$3
+  echo "$1 install finished."
+}
+
 
 #install NERDTree
 # base: http://www.vim.org/scripts/script.php?script_id=1658
@@ -75,3 +121,15 @@ getScriptFile "tasklist.vim" 10388
 #install rails
 # base: http://www.vim.org/scripts/script.php?script_id=1567
 getScript "rails.zip" 12622
+
+#install python omni completion
+# base: http://www.vim.org/scripts/script.php?script_id=1542
+getFile "pythoncomplete.vim" 10872 /autoload
+
+#install showmarks
+# base: http://www.vim.org/scripts/script.php?script_id=152
+getScript "showmarks.zip" 2800
+
+cd ..
+rm -rf $tmpdir
+cd $mydir
