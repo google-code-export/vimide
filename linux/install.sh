@@ -33,22 +33,31 @@ if [ ! -f "$vimrc" ]; then
 fi
 
 echo "
+
 set fileencodings=ucs-bom,utf-8,cp936
+set helplang=cn
+
 set shiftwidth=2
 set tabstop=2
 set expandtab
-set nu!
-set mouse=a
 set nobackup
 set noswapfile
 set nowb
 set backspace=start,indent,eol
+set nu!
+set autoindent
+set smartindent
+set wrap
+
+set mouse=a
 set noerrorbells
 set novisualbell
-set helplang=cn
+
+filetype plugin on
+filetype indent on
+
 map <C-t> :NERDTree<cr>
-map <C-l> :TlistToggle<cr>
-map <C-s> :w<cr>
+map <C-o> :TlistToggle<cr>
 vmap <C-c> \"+y
 " >> $vimrc
 
@@ -203,6 +212,6 @@ getScript "vim-autocomplpop.zip" 11894
 getScript "NERD_commenter.zip" 10318
 
 #must be at the end of the file
-cd ..
-rm -rf $tmpdir
+#cd ..
+#rm -rf $tmpdir
 cd $mydir
