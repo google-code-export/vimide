@@ -1,0 +1,3 @@
+安装方法:
+1.将Vim目录的所有文件直接放到Vim安装目录复盖原有的文件
+2.将WINDOWS目录下的ctags.exe复制到系统所用的WINDOWS目录(如C:\WINDOWS)
