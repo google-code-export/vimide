@@ -34,6 +34,24 @@ getTarScript () {
   echo "$1 install finished."
 }
 
+getGzScript () {
+  if [ ! -f "$1" ]; then
+    echo "Start downloading $1, please wait..."
+    wget http://www.vim.org/scripts/download_script.php?src_id=$2 -O $1
+  fi
+  tar -xzf $1 -C $dir
+  echo "$1 install finished."
+}
+
+getScriptFileType () {
+  if [ ! -f "$1" ]; then
+    echo "Start downloading $1, please wait..."
+    wget http://www.vim.org/scripts/download_script.php?src_id=$2 -O $1
+  fi
+  cp -rf $1 $dir/ftplugin
+  echo "$1 install finished."
+}
+
 getScriptFile () {
   if [ ! -f "$1" ]; then
     echo "Start downloading $1, please wait..."
@@ -205,11 +223,17 @@ getScript "txtbrowser.zip" 12776
 
 #Lanuage supports and frameworks
 
+
 #Javascript support
 
 #install jsbeautify
 # base: http://www.vim.org/scripts/script.php?script_id=2727
 getScriptFile "jsbeautify.vim" 11120
+
+#install JavascriptLint
+# base: http://www.vim.org/scripts/script.php?script_id=2578
+getScriptFile "JavascriptLint.vim" 10540
+
 
 #Ruby and rails support
 
@@ -243,6 +267,7 @@ getScriptFile "a.vim" 7218
 # base: http://vim.sourceforge.net/scripts/script.php?script_id=1520
 getScript "omnicppcomplete.zip" 7722
 
+
 #PHP support
 
 #install php-doc
@@ -254,9 +279,20 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 " >> $vimrc
 
+
 #install perl-support
 # base: http://vim.sourceforge.net/scripts/script.php?script_id=556
 getScript "perl-support.zip" 12539
+
+
+#install Java support
+# base: http://www.vim.org/scripts/script.php?script_id=1213
+getGzScript "vjde.tgz" 10992
+
+
+#install xml support
+# base: http://www.vim.org/scripts/script.php?script_id=301
+getScriptFileType "xml.vim" 10362
 
 #must be at the end of the file
 #cd ..
