@@ -138,7 +138,7 @@ vmap <C-c> \"+y
 
 echo "\"VIMIDE gvimrc basic settings
 set mouse=a
-" >> $vimrc
+" >> $gvimrc
 
 createDir $tmpdir
 
