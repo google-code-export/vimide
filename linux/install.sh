@@ -169,6 +169,7 @@ getScript "NERDTree.zip" 11834
 getScript "taglist.zip" 7701
 echo "
 let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Show_One_File = 1
 " >> $vimrc
 
 #install miniBuffer
