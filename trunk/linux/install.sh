@@ -130,6 +130,9 @@ set novisualbell
 filetype plugin on
 filetype indent on
 
+syntax on
+set ruler
+
 map <C-t> :NERDTree<cr>
 map <C-o> :TlistToggle<cr>
 vmap <C-c> \"+y
