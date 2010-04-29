@@ -1,14 +1,11 @@
 #!/usr/bin/bash
-# 作者: 北漂IT民工 vim 自动安装版 version 0.1
-# 联系方式: calidion@gmail.com
-# google Code 地址: https://code.google.com/p/vimide/
+# Auto configurated vim IDE
+# Author:  Calidion
+# Version: 0.1
+# E-mail: calidion@gmail.com
+# Project : https://code.google.com/p/vimide/
 
-# 安装方法: sh install.sh 或 chmod +x install.sh | ./install.sh
 # Install commands: sh install.sh or chmod +x install.sh | ./install.sh
-
-# 注意:
-# 必须要先执行下面的命令:
-# sudo apt-get install exuberant-ctags wget unzip
 
 # Caution:
 # must firstly run the following command:
@@ -146,20 +143,6 @@ set mouse=a
 createDir $tmpdir
 
 cd $tmpdir
-
-#install vim help doc for chinese
-vimcdoc=vimcdoc-1.5.0.tar.gz
-vimcdocdir=vimcdoc-1.5.0
-removeDir $vimcdocdir
-if [ ! -f "$vimcdoc" ]; then
-  wget http://nchc.dl.sourceforge.net/sourceforge/vimcdoc/$vimcdoc
-fi
-tar -xvf $vimcdoc
-cd $vimcdocdir
-sh vimcdoc.sh -i
-cd ..
-rm -rf $vimcdocdir
-
 
 #Basic structure for the IDE
 
