@@ -19,6 +19,7 @@ set noerrorbells
 set novisualbell
 
 syntax on
+set ruler
 
 filetype plugin on
 filetype indent on
