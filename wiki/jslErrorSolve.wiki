@@ -1,3 +1,4 @@
+#labels 如何解决jsl的错误问题
 如何解决jsl的错误问题
 
 用vimide编辑时经常会出现jsl找不到的情况，
@@ -35,7 +36,8 @@ sudo python setup install
 
 所以我们要将它修改成：
 
-  let jslint_command_options = '--nofilelisting --nocontext --nosummary --nologo --process'
+  let jslint_command_options = '--nofilelisting --nosummary --nologo'
 
-也就是将"-"改成是"--"
+也就是将"-"改成是"--",然后删除两个选项，
 这样jsl就会根据设定能报错了。
+如果这样个性仍有总是，需要根据shell下jsl的help说明来修改
