@@ -219,7 +219,7 @@ getScriptFile "jsbeautify.vim" 11120
 
 #install JavascriptLint
 # base: http://www.vim.org/scripts/script.php?script_id=2578
-getScriptFile "JavascriptLint.vim" 10540
+#getScriptFile "JavascriptLint.vim" 10540
 
 
 #Ruby and rails support
@@ -284,4 +284,6 @@ getScriptFileType "xml.vim" 10362
 #must be at the end of the file
 #cd ..
 #rm -rf $tmpdir
+
+cp -rf plugin/JavascriptLint.vim $dir/plugin
 cd $mydir
