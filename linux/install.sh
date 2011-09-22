@@ -215,7 +215,7 @@ getScript "txtbrowser.zip" 12776
 
 #install jsbeautify
 # base: http://www.vim.org/scripts/script.php?script_id=2727
-getScriptFile "jsbeautify.vim" 11120
+#getScriptFile "jsbeautify.vim" 11120
 
 #install JavascriptLint
 # base: http://www.vim.org/scripts/script.php?script_id=2578
@@ -286,4 +286,5 @@ getScriptFileType "xml.vim" 10362
 #rm -rf $tmpdir
 
 cp -rf plugin/JavascriptLint.vim $dir/plugin
+cp -rf plugin/jsbeautify.vim.vim $dir/plugin
 cd $mydir
