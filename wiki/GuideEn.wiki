@@ -1,4 +1,6 @@
+#labels VimIDEUsersGuide
 *if jsl error encountered* check here [jslErrorSolve]
+=VimIDE User's Guide=
 
 Goals:
 An easy to install IDE like Vim. <br/>
