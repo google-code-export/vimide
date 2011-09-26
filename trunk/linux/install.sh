@@ -285,6 +285,6 @@ getScriptFileType "xml.vim" 10362
 #cd ..
 #rm -rf $tmpdir
 
-cp -rf plugin/JavascriptLint.vim $dir/plugin
-cp -rf plugin/jsbeautify.vim.vim $dir/plugin
 cd $mydir
+cp -rf plugin/JavascriptLint.vim $dir/plugin
+cp -rf plugin/jsbeautify.vim $dir/plugin
