@@ -40,7 +40,7 @@ sudo python setup install
 
 也就是将"-"改成是"--",然后删除两个选项，
 这样jsl就会根据设定能报错了。
-如果这样个性仍有总是，需要根据shell下jsl的help说明来修改
+如果这样修改仍有问题，需要根据shell下jsl的help说明来修改
 
 效果图:
 
