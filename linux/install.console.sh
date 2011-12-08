@@ -285,5 +285,5 @@ getScriptFileType "xml.vim" 10362
 #cd ..
 #rm -rf $tmpdir
 
-cp -rf plugin/JavascriptLint.vim $dir/plugin
 cd $mydir
+cp -rf plugin/JavascriptLint.vim $dir/plugin
