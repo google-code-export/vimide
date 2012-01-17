@@ -24,9 +24,9 @@ cd jsl
 
 sudo apt-get install python(x.x)-dev #(x,x)根据自己的版本选择
 
-sudo python setup build
+sudo python setup.py build
 
-sudo python setup install
+sudo python setup.py install
 
 2.消除脚本错误：
 由于第19行代码是这样的。
