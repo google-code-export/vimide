@@ -133,6 +133,9 @@ set ruler
 map <C-t> :NERDTree<cr>
 map <C-o> :TlistToggle<cr>
 vmap <C-c> \"+y
+set mouse=a
+autocmd VimEnter * NERDTree
+autocmd BufEnter * silent! lcd %:p:h
 \"--------end--------
 " >> $vimrc
 

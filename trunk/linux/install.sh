@@ -130,14 +130,16 @@ filetype indent on
 syntax on
 set ruler
 
-map <C-t> :NERDTree<cr>
+map <> :NERDTree<cr>
 map <C-o> :TlistToggle<cr>
 vmap <C-c> \"+y
+set mouse=a
+autocmd VimEnter * NERDTree
+autocmd BufEnter * silent! lcd %:p:h
 \"--------end--------
 " >> $vimrc
 
 echo "\"VIMIDE gvimrc basic settings
-set mouse=a
 " >> $gvimrc
 
 createDir $tmpdir
