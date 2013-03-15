@@ -13,6 +13,18 @@
 
 #function definitions
 
+getZip() {
+  if [ ! -f "$1" ]; then
+    echo "Start downloading $1, please wait..."
+    wget $2$1 -O $1
+  fi
+  unzip -o $1 -d $3
+  cd $3/$4
+  cp -rf * $dir/
+  echo "$1 install finished."
+}
+
+
 getScript () {
   if [ ! -f "$1" ]; then
     echo "Start downloading $1, please wait..."
@@ -282,6 +294,12 @@ getGzScript "vjde.tgz" 10992
 #install xml support
 # base: http://www.vim.org/scripts/script.php?script_id=301
 getScriptFileType "xml.vim" 10362
+
+#add vim powerline
+getZip develop.zip https://github.com/Lokaltog/vim-powerline/archive/ $tmpdir/develop vim-powerline-develop
+
+#add NERDTree
+getZip master.zip https://github.com/scrooloose/nerdtree/archive/ $tmpdir/master nerdtree-master
 
 #must be at the end of the file
 #cd ..
